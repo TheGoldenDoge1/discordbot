@@ -5,7 +5,7 @@ import yt_dlp as youtube_dl
 import asyncio
 
 # Токены
-token = 'ODI4MTQ5Njg0MTIzMzM2NzM0.G3Q-V-.UWYPjLsPz3tn6k8WoMXA4PQVpRrM_9FVQ3UkQ8'
+token = 'token'
 
 # Все разрешения интентов
 intents = discord.Intents.all()
