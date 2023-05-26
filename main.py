@@ -5,7 +5,7 @@ import yt_dlp as youtube_dl
 import asyncio
 
 # Токены
-token = ''
+token = 'ODI4MTQ5Njg0MTIzMzM2NzM0.G3Q-V-.UWYPjLsPz3tn6k8WoMXA4PQVpRrM_9FVQ3UkQ8'
 
 # Все разрешения интентов
 intents = discord.Intents.all()
@@ -53,8 +53,7 @@ async def youtubedlplay(interaction: discord.Interaction, link: str):
 
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(link, download=False)
-        linkydl = info['url']
-        print('EXTRACTED LINK: ', linkydl)
+        linkydl = info['formats'][-20]['url']
     if voice_client.is_playing():
         voice_client.stop()
     voice_client.play(discord.FFmpegPCMAudio(source=linkydl, **ffmpeg_options))
