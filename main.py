@@ -4,10 +4,10 @@ from discord.ext import commands
 import yt_dlp as youtube_dl
 import asyncio
 import openai
-
+import tokens
 # Токены
-token = '123'
-openai.api_key = '123'
+token = tokens.token
+openai.api_key = tokens.openai
 # Все разрешения интентов
 intents = discord.Intents.all()
 
