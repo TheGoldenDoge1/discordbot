@@ -6,7 +6,8 @@ import asyncio
 import openai
 
 # Токены
-
+token = 'ODI4MTQ5Njg0MTIzMzM2NzM0.GXB0iJ.954TV6ybhS5KEwun4NZGXJuEOeV0sU_ud1Fsso'
+openai.api_key = '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'
 # Все разрешения интентов
 intents = discord.Intents.all()
 
@@ -41,13 +42,14 @@ history=[]
 
 @bot.event
 async def on_ready():
+    activity = discord.Activity(type=discord.ActivityType.listening, name="YouTube Music bot")
     print(f'** logged in as {bot.user.name} **')
     try:
         synced = await bot.tree.sync()
         print(f'** synced {len(synced)} command(s)')
     except Exception as e:
         print(e)
-
+    await bot.change_presence(activity=activity)
 @bot.tree.command(name='stop', description='Stop playing current song')
 async def stop(interaction: discord.Interaction):
     voice_client = interaction.guild.voice_client
