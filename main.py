@@ -6,8 +6,8 @@ import asyncio
 import openai
 
 # Токены
-token = 'ODI4MTQ5Njg0MTIzMzM2NzM0.GXB0iJ.954TV6ybhS5KEwun4NZGXJuEOeV0sU_ud1Fsso'
-openai.api_key = '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'
+token = '123'
+openai.api_key = '123'
 # Все разрешения интентов
 intents = discord.Intents.all()
 
